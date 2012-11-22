@@ -23,7 +23,7 @@ Include the jQuery library and Backstretch plugin files in your webpage (prefera
   $(".foo").backstretch([
     "path/to/image.jpg",
     "path/to/image2.jpg",
-    "path/to/image3.jpg"    
+    "path/to/image3.jpg"
   ], {duration: 4000});
 </script>
 ```
@@ -45,6 +45,10 @@ This is the speed at which the image will fade in. Integers in milliseconds are 
 ### duration
 
 The amount of time in between slides, when using Backstretch as a slideshow, expressed as the number of milliseconds. (type=Integer, default=5000)
+
+### preload
+
+This allows to control if the images should be preloaded. (type=Boolean, default=true)
 
 ## Slideshow API
 
