@@ -93,6 +93,7 @@
         , border: 'none'
         , width: 'auto'
         , height: 'auto'
+        , maxHeight: 'none'
         , maxWidth: 'none'
         , zIndex: -999999
       }
@@ -234,9 +235,6 @@
                         // Save the ratio
                         $(this).data('ratio', imgWidth / imgHeight);
 
-                        // Resize
-                        self.resize();
-
                         // Show the image, then delete the old one
                         // "speed" option has been deprecated, but we want backwards compatibilty
                         $(this).fadeIn(self.options.speed || self.options.fade, function () {
@@ -248,8 +246,11 @@
                           }
 
                           // Trigger the event
-                          self.$container.trigger(evt);
+                          self.$container.trigger(evt, self);
                         });
+
+                        // Resize
+                        self.resize();
                       })
                       .appendTo(self.$wrap);
 
